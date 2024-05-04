@@ -17,7 +17,7 @@ const Navbar = () => {
             </div>
             <div className='col-span-4 flex justify-center items-center'>
               <img
-                src='../../../public/logo.svg'
+                src='/logo.svg'
                 alt='Logo'
                 style={{
                   height: '150px', // Set the logo height to 300px
