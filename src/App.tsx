@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import CssBaseline from '@mui/material/CssBaseline';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 
@@ -27,6 +28,7 @@ function App() {
         />
       </Routes>
       <SpeedInsights />
+      <CssBaseline />
     </BrowserRouter>
   );
 }
