@@ -1,4 +1,4 @@
-/* Import Roboto fonts */
+/* Import fonts */
 @import url('@fontsource/roboto/300.css');
 @import url('@fontsource/roboto/400.css');
 @import url('@fontsource/roboto/500.css');
@@ -25,8 +25,4 @@
 
 .white-logo {
   filter: brightness(0) invert(1);
-}
-
-.bold-svg path {
-  stroke-width: 3; /* Increase the stroke width */
 }
