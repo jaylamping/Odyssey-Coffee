@@ -3,14 +3,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Home from './pages/Home';
+import Menu from './pages/Menu';
 import Navbar from './components/Navbar';
 
 const Layout = ({
   children,
-  isHome,
+  isHome = false,
 }: {
   children: ReactNode;
-  isHome: boolean;
+  isHome?: boolean;
 }) => {
   return (
     <div>
@@ -29,6 +30,14 @@ function App() {
           element={
             <Layout isHome={true}>
               <Home />
+            </Layout>
+          }
+        />
+        <Route
+          path='/menu'
+          element={
+            <Layout>
+              <Menu />
             </Layout>
           }
         />
