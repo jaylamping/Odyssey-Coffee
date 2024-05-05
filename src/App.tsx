@@ -5,10 +5,16 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const Layout = ({
+  children,
+  isHome,
+}: {
+  children: ReactNode;
+  isHome: boolean;
+}) => {
   return (
     <div>
-      <Navbar />
+      <Navbar isHome={isHome} />
       {children}
     </div>
   );
@@ -21,7 +27,7 @@ function App() {
         <Route
           path='/'
           element={
-            <Layout>
+            <Layout isHome={true}>
               <Home />
             </Layout>
           }
