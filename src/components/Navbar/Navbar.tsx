@@ -10,7 +10,7 @@ const Navbar = () => {
         className='grid grid-cols-12 items-center'
         style={{ height: '100%' }}
       >
-        <div className='col-span-4 flex justify-between items-center'>
+        <div className='col-span-4 flex justify-between items-center pl-14'>
           <Link className='nav-link' to='/'>
             Home
           </Link>
@@ -34,7 +34,7 @@ const Navbar = () => {
             }}
           />
         </div>
-        <div className='col-span-4 flex justify-between items-center'>
+        <div className='col-span-4 flex justify-between items-center pr-14'>
           <Link className='nav-link' to='/order'>
             Order Online
           </Link>

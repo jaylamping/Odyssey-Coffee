@@ -13,3 +13,11 @@
   font-size: 18px;
   font-weight: 500;
 }
+
+.home-background {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/home-background.png');
+  background-size: cover;
+  background-position: center;
+}
