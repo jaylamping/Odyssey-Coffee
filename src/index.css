@@ -8,3 +8,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-link {
+  font-size: 18px;
+  font-weight: 500;
+}
