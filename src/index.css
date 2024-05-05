@@ -12,6 +12,7 @@
 .nav-link {
   font-size: 18px;
   font-weight: 500;
+  color: white;
 }
 
 .home-background {
@@ -20,4 +21,8 @@
   background-image: url('/home-background.png');
   background-size: cover;
   background-position: center;
+}
+
+.white-logo {
+  filter: brightness(0) invert(1);
 }
