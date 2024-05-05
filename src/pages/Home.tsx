@@ -8,13 +8,13 @@ const Home = () => {
           <h1 className='text-9xl'>Your Journey Starts Here.</h1>
           <div className='space-x-12 pt-14 pl-10'>
             <Link
-              className='px-10 py-3 bg-yellow-600 hover:bg-yellow-800 text-white font-bold py-2 px-4 rounded-xl'
+              className='px-10 py-3 bg-yellow-600 hover:bg-yellow-800 text-white font-bold rounded-xl'
               to='/menu'
             >
               View Menu
             </Link>
             <Link
-              className='px-10 py-3 bg-yellow-600 hover:bg-yellow-800 text-white font-bold py-2 px-4 rounded-xl'
+              className='px-10 py-3 bg-yellow-600 hover:bg-yellow-800 text-white font-bold rounded-xl'
               to='/order'
             >
               Order Ahead

@@ -37,7 +37,7 @@ const Navbar = () => {
         </Link>
         <div className='col-span-4 flex justify-between items-center pr-16'>
           <Link
-            className='px-10 py-3 bg-yellow-600 hover:bg-yellow-800 text-white font-bold py-2 px-4 rounded-xl'
+            className='px-10 py-3 bg-yellow-600 hover:bg-yellow-800 text-white font-bold rounded-xl'
             to='/order'
           >
             Order Online
