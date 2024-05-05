@@ -21,7 +21,7 @@ const Navbar = () => {
             Rewards
           </Link>
         </div>
-        <div className='col-span-4 flex justify-center items-center'>
+        <Link className='col-span-4 flex justify-center items-center' to='/'>
           <img
             src='/logo.svg'
             alt='Logo'
@@ -34,7 +34,7 @@ const Navbar = () => {
               transform: 'translateY(-50%) scale(2.5)',
             }}
           />
-        </div>
+        </Link>
         <div className='col-span-4 flex justify-between items-center pr-16'>
           <Link className='nav-link' to='/order'>
             Order Online
