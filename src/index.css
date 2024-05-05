@@ -10,19 +10,23 @@
 @tailwind utilities;
 
 .nav-link {
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 600;
   color: white;
 }
 
 .home-background {
   width: 100vw;
   height: 100vh;
-  background-image: url('/home-background.png');
+  background-image: url('/new-background.png');
   background-size: cover;
   background-position: center;
 }
 
 .white-logo {
   filter: brightness(0) invert(1);
+}
+
+.bold-svg path {
+  stroke-width: 3; /* Increase the stroke width */
 }

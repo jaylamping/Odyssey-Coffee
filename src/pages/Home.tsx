@@ -2,8 +2,10 @@ const Home = () => {
   return (
     <div
       className='bg-cover bg-center h-screen w-screen bg-no-repeat'
-      style={{ backgroundImage: `url('/home_background.png')` }}
-    ></div>
+      style={{ backgroundImage: `url('/main-background.png')` }}
+    >
+      <h1>Coffee is the yum yum.</h1>
+    </div>
   );
 };
 

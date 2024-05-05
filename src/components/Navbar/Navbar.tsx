@@ -31,7 +31,7 @@ const Navbar = () => {
               width: 'auto',
               position: 'absolute',
               top: '50%',
-              transform: 'translateY(-50%) scale(2.5)',
+              transform: 'translateY(-50%) scale(2.7)',
             }}
           />
         </Link>
