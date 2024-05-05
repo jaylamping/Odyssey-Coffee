@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div
-      className='container mx-auto p-12 fixed top-0 left-0 z-50'
+      className='w-full p-12 fixed top-0 left-0 z-50'
       style={{ height: '150px' }}
     >
       <div
