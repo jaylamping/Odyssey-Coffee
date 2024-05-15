@@ -1,4 +1,4 @@
 const Menu = () => {
-  return <>Menu</>;
+  return <>Our Menu</>;
 };
 export default Menu;
