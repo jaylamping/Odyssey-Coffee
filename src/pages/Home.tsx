@@ -1,9 +1,19 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Home = () => {
   return (
     <div className='grid grid-cols-12 bg-cover bg-center h-screen w-screen bg-no-repeat home-background serif'>
-      <div className='col-start-2 col-span-6 flex items-center justify-center min-h-screen text-white pt-36 animate-fade-up'>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.3,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+        className='col-start-2 col-span-6 flex items-center justify-center min-h-screen text-white pt-36'
+      >
         <div>
           <h1 className='text-9xl'>Your Journey Starts Here.</h1>
           <div className='space-x-12 pt-14 pl-4'>
@@ -21,7 +31,7 @@ const Home = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
