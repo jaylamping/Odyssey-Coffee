@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Home = () => {
   return (
-    <div className='grid grid-cols-12 bg-cover bg-center h-screen w-screen bg-no-repeat home-background serif'>
+    <div className='grid grid-cols-12 bg-cover bg-center h-screen w-screen bg-no-repeat home-background serif overflow-hidden'>
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
