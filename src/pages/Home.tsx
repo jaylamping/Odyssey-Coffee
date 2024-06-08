@@ -1,13 +1,41 @@
+import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
-const Home = () => {
+interface ParallaxSectionProps {
+  children: ReactNode;
+  offset?: number;
+}
+
+const ParallaxSection: React.FC<ParallaxSectionProps> = ({
+  children,
+  offset = 0,
+}) => {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], [0, offset * 50]);
+
+  return <motion.div style={{ y }}>{children}</motion.div>;
+};
+
+const ParallaxBackground: React.FC<{
+  offset: number;
+  backgroundImage: string;
+}> = ({ offset, backgroundImage }) => {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], [0, offset * 50]);
+
   return (
-    <div className='overflow-hidden'>
-      <section
-        id='hero'
-        className='grid grid-cols-12 bg-cover bg-center h-screen w-screen bg-no-repeat home-background serif'
-      >
+    <motion.div
+      className='absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat'
+      style={{ y, backgroundImage: `url(${backgroundImage})` }}
+    />
+  );
+};
+
+const Home: React.FC = () => {
+  return (
+    <div>
+      <section className='grid grid-cols-12 bg-cover bg-center h-screen w-screen bg-no-repeat home-background serif'>
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,9 +65,15 @@ const Home = () => {
           </div>
         </motion.div>
       </section>
-      <section style={{ height: '800px' }}>helloooo</section>
-      <section style={{ height: '800px', backgroundColor: 'red' }}>
-        helloooo
+      <section className='h-screen bg-white flex justify-center items-center'>
+        <ParallaxSection offset={1}>
+          <h1 className='text-5xl'>Section 2</h1>
+        </ParallaxSection>
+      </section>
+      <section className='h-screen flex justify-center items-center text-white home-background'>
+        <ParallaxSection offset={2}>
+          <h1 className='text-5xl'>Section 3</h1>
+        </ParallaxSection>
       </section>
     </div>
   );
