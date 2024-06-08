@@ -17,25 +17,10 @@ const ParallaxSection: React.FC<ParallaxSectionProps> = ({
   return <motion.div style={{ y }}>{children}</motion.div>;
 };
 
-const ParallaxBackground: React.FC<{
-  offset: number;
-  backgroundImage: string;
-}> = ({ offset, backgroundImage }) => {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 1000], [0, offset * 50]);
-
-  return (
-    <motion.div
-      className='absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat'
-      style={{ y, backgroundImage: `url(${backgroundImage})` }}
-    />
-  );
-};
-
 const Home: React.FC = () => {
   return (
-    <div>
-      <section className='grid grid-cols-12 bg-cover bg-center h-screen w-screen bg-no-repeat home-background serif'>
+    <div className=''>
+      <section className='grid grid-cols-12 h-screen w-screen serif home-background bg-fixed bg-cover bg-center'>
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,7 +55,7 @@ const Home: React.FC = () => {
           <h1 className='text-5xl'>Section 2</h1>
         </ParallaxSection>
       </section>
-      <section className='h-screen flex justify-center items-center text-white home-background'>
+      <section className='h-screen flex justify-center items-center home-background bg-fixed bg-cover bg-center'>
         <ParallaxSection offset={2}>
           <h1 className='text-5xl'>Section 3</h1>
         </ParallaxSection>
