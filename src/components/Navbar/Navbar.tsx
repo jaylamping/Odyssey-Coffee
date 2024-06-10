@@ -20,11 +20,11 @@ const Navbar = () => {
   /* Functions */
   const updateNavbar = useCallback(() => {
     setIsScrolled(true);
-    if (scrollY.get() > 10 || location.pathname !== '/') {
+    if (scrollY.get() > 150 || location.pathname !== '/') {
       controls.start({
         backgroundColor: '#ffffff',
         height: '70px',
-        transition: { duration: 0.2 },
+        transition: { duration: 0.3 },
       });
     } else {
       setIsScrolled(false);
@@ -32,7 +32,7 @@ const Navbar = () => {
         backgroundColor: 'transparent',
         height: '150px',
         width: '100%',
-        transition: { duration: 0.2 },
+        transition: { duration: 0.3 },
       });
     }
   }, [controls, location.pathname, scrollY]);
