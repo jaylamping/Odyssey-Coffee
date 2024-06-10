@@ -21,6 +21,7 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
       controls.start({
         backgroundColor: '#ffffff',
         height: '70px',
+        // boxShadow: '0 8px 16px rgba(0, 0, 0, 0.1)',
         transition: { duration: 0.2 },
       });
     } else {
@@ -29,6 +30,7 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
         backgroundColor: 'transparent',
         height: '150px',
         width: '100%',
+        // boxShadow: 'none',
         transition: { duration: 0.2 },
       });
     }
@@ -37,10 +39,6 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
   useMotionValueEvent(scrollY, 'change', () => updateNavbar());
 
   return isHome ? (
-    // <div
-    //   className='w-full p-10 fixed top-0 left-0 z-50 serif'
-    //   style={{ height: '150px' }}
-    // >
     <motion.nav
       initial={{
         backgroundColor: 'transparent',
@@ -55,13 +53,16 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
         zIndex: 1000,
         display: 'flex',
         alignItems: 'center',
-        padding: '0 20px',
+        padding: '0',
       }}
       className='w-full p-10 fixed top-0 left-0 z-50 serif'
     >
       <div
         className='grid grid-cols-12 items-center w-full'
-        style={{ height: '100%' }}
+        style={{
+          height: '100%',
+          boxShadow: isScrolled ? '0 8px 16px rgba(0, 0, 0, 0.1)' : 'none',
+        }}
       >
         <div className='col-span-4 flex justify-between items-center pl-16'>
           <Link
