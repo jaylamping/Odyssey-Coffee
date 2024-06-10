@@ -1,21 +1,20 @@
-import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-interface ParallaxSectionProps {
-  children: ReactNode;
-  offset?: number;
-}
+// interface ParallaxSectionProps {
+//   children: ReactNode;
+//   offset?: number;
+// }
 
-const ParallaxSection: React.FC<ParallaxSectionProps> = ({
-  children,
-  offset = 0,
-}) => {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 1000], [0, offset * 50]);
+// const ParallaxSection: React.FC<ParallaxSectionProps> = ({
+//   children,
+//   offset = 0,
+// }) => {
+//   const { scrollY } = useScroll();
+//   const y = useTransform(scrollY, [0, 1000], [0, offset * 50]);
 
-  return <motion.div style={{ y }}>{children}</motion.div>;
-};
+//   return <motion.div style={{ y }}>{children}</motion.div>;
+// };
 
 const Home: React.FC = () => {
   return (
@@ -51,14 +50,30 @@ const Home: React.FC = () => {
         </motion.div>
       </section>
       <section className='h-screen bg-white flex justify-center items-center'>
-        <ParallaxSection offset={1}>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1.2,
+            delay: 0.3,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+        >
           <h1 className='text-5xl'>Section 2</h1>
-        </ParallaxSection>
+        </motion.div>
       </section>
       <section className='h-screen flex justify-center items-center home-background bg-fixed bg-cover bg-center'>
-        <ParallaxSection offset={2}>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1.2,
+            delay: 0.3,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+        >
           <h1 className='text-5xl'>Section 3</h1>
-        </ParallaxSection>
+        </motion.div>
       </section>
     </div>
   );
