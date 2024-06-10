@@ -1,21 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-// interface ParallaxSectionProps {
-//   children: ReactNode;
-//   offset?: number;
-// }
-
-// const ParallaxSection: React.FC<ParallaxSectionProps> = ({
-//   children,
-//   offset = 0,
-// }) => {
-//   const { scrollY } = useScroll();
-//   const y = useTransform(scrollY, [0, 1000], [0, offset * 50]);
-
-//   return <motion.div style={{ y }}>{children}</motion.div>;
-// };
-
 const Home: React.FC = () => {
   return (
     <div className=''>
