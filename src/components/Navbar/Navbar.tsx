@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState, useCallback } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import {
   motion,
   useAnimation,
@@ -7,21 +7,23 @@ import {
   useScroll,
 } from 'framer-motion';
 
-const Navbar = ({ isHome }: { isHome: boolean }) => {
+const Navbar = () => {
   /* Local State */
   const [isScrolled, setIsScrolled] = useState(false);
 
   /* Hooks */
   const controls = useAnimation();
   const { scrollY } = useScroll();
+  const location = useLocation();
+  useMotionValueEvent(scrollY, 'change', () => updateNavbar());
 
-  const updateNavbar = () => {
+  /* Functions */
+  const updateNavbar = useCallback(() => {
     setIsScrolled(true);
-    if (scrollY.get() > 10) {
+    if (scrollY.get() > 10 || location.pathname !== '/') {
       controls.start({
         backgroundColor: '#ffffff',
         height: '70px',
-        // boxShadow: '0 8px 16px rgba(0, 0, 0, 0.1)',
         transition: { duration: 0.2 },
       });
     } else {
@@ -30,15 +32,17 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
         backgroundColor: 'transparent',
         height: '150px',
         width: '100%',
-        // boxShadow: 'none',
         transition: { duration: 0.2 },
       });
     }
-  };
+  }, [controls, location.pathname, scrollY]);
 
-  useMotionValueEvent(scrollY, 'change', () => updateNavbar());
+  /* Effects */
+  useEffect(() => {
+    updateNavbar();
+  }, [location.pathname, updateNavbar]);
 
-  return isHome ? (
+  return (
     <motion.nav
       initial={{
         backgroundColor: 'transparent',
@@ -55,7 +59,6 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
         alignItems: 'center',
         padding: '0',
       }}
-      className='w-full p-10 fixed top-0 left-0 z-50 serif'
     >
       <div
         className='grid grid-cols-12 items-center w-full'
@@ -122,8 +125,6 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
         </div>
       </div>
     </motion.nav>
-  ) : (
-    <></>
   );
 };
 

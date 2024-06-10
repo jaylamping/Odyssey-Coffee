@@ -6,16 +6,10 @@ import Home from './pages/Home';
 import Menu from './pages/Menu';
 import Navbar from './components/Navbar';
 
-const Layout = ({
-  children,
-  isHome = false,
-}: {
-  children: ReactNode;
-  isHome?: boolean;
-}) => {
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div>
-      <Navbar isHome={isHome} />
+      <Navbar />
       {children}
     </div>
   );
@@ -28,7 +22,7 @@ function App() {
         <Route
           path='/'
           element={
-            <Layout isHome={true}>
+            <Layout>
               <Home />
             </Layout>
           }
